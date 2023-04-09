@@ -1,10 +1,10 @@
 
 package com.trab.Cidade;
 
-import java.util.LinkedList;
+//import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
+//import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,8 +36,8 @@ public class CalculoFreteController {
     @GetMapping("/cidadesAtendidas")
     @CrossOrigin(origins = "*")
     public ResponseEntity<List<String>> consultaCidadesAtendidas() {
-    List<String> cidades = repositorioDeCidades.todas().stream().map(c -> c.getNome()).toList();
-    return ResponseEntity.status(HttpStatus.OK).body(cidades);
+        List<String> cidades = repositorioDeCidades.todas().stream().map(c -> c.getNome()).toList();
+        return ResponseEntity.status(HttpStatus.OK).body(cidades);
     }
 
     // Retorna a cidade correspondente ao CEP ou
@@ -93,7 +93,7 @@ public class CalculoFreteController {
                 "", 0, 0, 0,
                 0, 0, -1);
         try {
-            var consulta = pesquisaCEP(solCusto.cepDestino());
+            var consulta = pesquisaCEP(solCusto.getCepDestino());
             if (consulta == null) {
                 return ResponseEntity
                         .status(HttpStatus.OK)
@@ -105,12 +105,12 @@ public class CalculoFreteController {
                 var cbt = cidadesAtendidas.get(cidade);
                 CustoTempoEntregaDTO cte = new CustoTempoEntregaDTO(
                         "01031970", "São Paulo",
-                        solCusto.cepDestino(), cbt.cidade(),
-                        solCusto.peso(),
-                        cbt.valor(),
+                        solCusto.getCepDestino(), cbt.getCidade(),
+                        solCusto.getPeso(),
+                        cbt.getValor(),
                         0,
                         0,
-                        cbt.valor(),
+                        cbt.getValor(),
                         5);
                 return ResponseEntity
                         .status(HttpStatus.OK)

@@ -10,11 +10,11 @@ public class SolicitaCustoDTO {
         this.peso = peso;
     }
 
-    public String getcepDestino() {
+    public String getCepDestino() {
         return cepDestino;
     }
 
-    public double getpeso() {
+    public double getPeso() {
         return peso;
     }
 }

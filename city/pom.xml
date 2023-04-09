@@ -12,11 +12,17 @@
 	<artifactId>city</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>city</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Tarefa 5 - Cidades</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>6.0.7</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
